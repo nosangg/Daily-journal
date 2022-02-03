@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+
+<div class="edit-form">
+    <form action="<%= result._id %> " method="post">
+        <input class="form-control" type="text" name="title" value=<%= result.title %> >
+        <textarea class="form-control" name="content" id="" cols="10" rows="3"><%= result.content %> </textarea>
+        <button class="btn btn-outline-primary btn-lg" type="submit">Submit</button>
+    </form>
+</div>
+
+
+<%- include("partials/footer") %> 

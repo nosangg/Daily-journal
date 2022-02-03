@@ -1,0 +1,42 @@
+<%- include("partials/header") %> 
+    <!-- nav bar -->
+    <div>
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+                <a href="" class="navbar-brand">Daily Journal</a>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Body -->
+    <div class="content">
+        <button type="button" class="btn btn-outline-primary btn-lg">
+            <a href="/compose">Compose</a></button>
+        <% journals.forEach(element => { %>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <%= element.title %>
+                </h2>
+                <p class="card-text"><%= element.content %></p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-outline-dark btn-sm" type="button"><a href="/journals/edit/<%= element._id %>">Edit</a></button>
+                    <button class="btn btn-outline-dark btn-sm" type="button"><a href="/journals/<%= element._id %>">Delete</a></button>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+    <%- include("partials/footer") %> 
